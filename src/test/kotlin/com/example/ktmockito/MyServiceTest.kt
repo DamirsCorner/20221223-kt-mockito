@@ -3,15 +3,17 @@ package com.example.ktmockito
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
-import org.mockito.Mockito
 import org.mockito.kotlin.any
+import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.mock
 
 class MyServiceTest {
 
     @Test
     fun greet() {
-        val myDependencyMock = Mockito.mock(MyDependency::class.java)
-        Mockito.`when`(myDependencyMock.getGreeting(any())).thenReturn("Hello, World!")
+        val myDependencyMock = mock<MyDependency> {
+            on { getGreeting(any()) } doReturn "Hello, World!"
+        }
 
         val myService = MyService(myDependencyMock)
 
