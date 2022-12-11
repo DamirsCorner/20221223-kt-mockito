@@ -3,8 +3,8 @@ package com.example.ktmockito
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
-import org.mockito.ArgumentMatchers.any
 import org.mockito.Mockito
+import org.mockito.kotlin.any
 
 class MyServiceTest {
 
